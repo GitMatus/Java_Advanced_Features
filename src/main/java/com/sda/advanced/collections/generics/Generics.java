@@ -1,19 +1,19 @@
-package com.sda.advanced.collections;
+package com.sda.advanced.collections.generics;
+
+import com.sda.advanced.collections.Cat;
 
 import java.util.ArrayList;
 
 public class Generics<T> {
 
     T t;
-
-    // t mi urcuje typ a vdaka tomu mozem vytvorit Geberics aj typu Interger, String dokonca aj mojho vlastneho ako Cat atd.T
-    // Naming conventions:
-//
-//    E - Element (used e.g. for Java Collection API)
-//    K - Key
-//    N - Number
-//    T - Typ
-//    V - Value
+    // Naming convention:
+    //
+    //    E - Element (used e.g. for Java Collection API)
+    //    K - Key
+    //    N - Number
+    //    T - Type
+    //    V - Value
 
     public Generics(T t) {
         this.t = t;
