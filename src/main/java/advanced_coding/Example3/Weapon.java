@@ -17,8 +17,15 @@ public interface Weapon {
     /**
      * Each call shots one bullet (prints string value in console).
      * If there are no more cartridges, it throws exception with appropriate message.
+     *
+     * @return damage
      */
-    void shot();
+    int shot() throws IllegalStateException;
+
+    /**
+     * Provides actual size of loaded magazine.
+     */
+    int actualMagazineSize();
 
     /**
      * Increment weapon deterioration.

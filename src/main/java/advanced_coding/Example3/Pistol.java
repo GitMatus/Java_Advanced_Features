@@ -4,12 +4,12 @@ import java.util.Stack;
 
 public class Pistol implements Weapon {
 
-    int magazineCapacity;
-    Stack magazineLoad;
-    int deterioration = 1;
+    private int magazineCapacity;
+    private Stack magazineLoad;
+    private int deterioration = 1;
 
     public Pistol() {
-        this.magazineCapacity = 3;
+        this.magazineCapacity = 12;
         this.magazineLoad = new Stack<>();
     }
 
@@ -53,14 +53,20 @@ public class Pistol implements Weapon {
     }
 
     @Override
-    public void shot() {
+    public int shot() throws IllegalStateException {
         if (!magazineLoad.isEmpty()) {
             System.out.println("firing " + magazineLoad.pop());
+            return 1;
         } else throw new IllegalStateException();
     }
 
     @Override
     public int incrementDeterioration() {
         return deterioration++;
+    }
+
+    @Override
+    public int actualMagazineSize() {
+        return magazineLoad.size();
     }
 }
